@@ -43,17 +43,18 @@ function Boundry(){
 	var boundry = gameObject.GetComponent(Transform).position;
 	var move = Vector3(Input.GetAxis("Horizontal2"), Input.GetAxis("Vertical2"), 0);
 
-    if(boundry.y > -6 && Input.GetAxis("Vertical2") > 0){
-    		if(boundry.y > -5.9){
-    			boundry.y = -6;
-    		}
-    		Debug.Log("too far up");	
-    }	else if (boundry.y < -7.1 && Input.GetAxis("Vertical2") < 0 ){
-    		Debug.Log("too far down");
-    }	else if (boundry.x < -12.7 && Input.GetAxis("Horizontal2") < 0){
-    		Debug.Log("too far left");
-    }	else if (boundry.x > 4 && Input.GetAxis("Horizontal2") > 0){
-    		Debug.Log("too far right");
+    if(boundry.y > -6.2&& Input.GetAxis("Vertical2") > 0){
+    	gameObject.transform.position = Vector2(boundry.x,-6);
+    		//Debug.Log("too far up");	
+    }	else if (boundry.y < -6.95 && Input.GetAxis("Vertical2") < 0 ){
+    	//gameObject.transform.position = Vector2(boundry.x,-6.9);
+    		//Debug.Log("too far down");
+    }	else if (boundry.x < -11.65 && Input.GetAxis("Horizontal2") < 0){
+    		//gameObject.transform.position = Vector2(-12.35, boundry.y);
+    		//Debug.Log("too far left");
+    }	else if (boundry.x > 3 && Input.GetAxis("Horizontal2") > 0){
+    		//Debug.Log("too far right");
+    		//gameObject.transform.position = Vector2(3.8, boundry.y);
     } 	else {
     	Move();
     }
