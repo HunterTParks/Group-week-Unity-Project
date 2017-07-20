@@ -12,6 +12,7 @@ var Direction : float = 0;
 
 function Update () {
     CheckForDirection();
+    CheckButtonPressForVelocity();
 
     var move = Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
     transform.position += move * speed * Time.deltaTime;
@@ -28,15 +29,19 @@ function Update () {
 
 function CheckForDirection(){
     if(Input.GetAxis("Horizontal") > 0){
+    	Debug.Log("Right", gameObject);
         //0 is looking right
         Direction = 0;
     } else if (Input.GetAxis("Horizontal") < 0){
+    	Debug.Log("Left", gameObject);
         //1 is looking left
         Direction = 1;
     } else if (Input.GetAxis("Vertical") > 0){
+    	Debug.Log("Up", gameObject);
         //2 is looking up
         Direction = 2;
     } else {
+    	Debug.Log("Down", gameObject);
         //3 is looking down
         Direction = 3;
     }
@@ -74,4 +79,10 @@ function CheckForXVelocity(){
     if(XVelocity <= 0){
         Player3IsKnockedBack = false;
     }
+}
+
+function CheckButtonPressForVelocity(){
+	if(!(Input.GetAxis("Horizontal") || Input.GetAxis("Vertical"))){
+		this.GetComponent(Rigidbody2D).velocity = new Vector2(0, 0);
+	} 
 }
