@@ -27,8 +27,8 @@ function Update () {
 function CheckForHealth() {
 
 	if(checkHealth != Player.GetComponent(Player_1).health){
-		Debug.Log(Player.GetComponent(Player_1).health);
-		Debug.Log(checkHealth);
+		//Debug.Log(Player.GetComponent(Player_1).health);
+		//Debug.Log(checkHealth);
 
 		var currentPosition = gameObject.GetComponent(Transform).position;
 
