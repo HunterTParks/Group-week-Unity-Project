@@ -18,9 +18,6 @@ function Update () {
 	CheckForXVelocity();
     NoHealth();
 
-
-
-
     if(Player1IsKnockedBack === true){
         //XVelocity--;
         if(XVelocity < 0){
@@ -50,7 +47,7 @@ function CheckForDirection(){
 }
 
 function OnCollisionEnter2D(coll : Collision2D) {
-    if(coll.gameObject.name == "Player 1" && Input.GetButton("Fire2")){
+    if(coll.gameObject.name == "Player 1" && Input.GetButton("player2Push")){
          Player1KnockBack(coll);
         coll.gameObject.GetComponent(Player_1).health-=10;
     }
@@ -71,14 +68,14 @@ function Player1KnockBack(coll: Collision2D){
     	coll.gameObject.GetComponent(Rigidbody2D).velocity = new Vector2(XVelocity, 0);
     	//coll.gameObject.GetComponent(Rigidbody2D).AddForce(transform.right * -1);
     } else if (Direction == 0 || Direction == 3) {
-    	XVelocity = 10;
+    	XVelocity = 25;
     	coll.gameObject.GetComponent(Rigidbody2D).velocity = new Vector2(XVelocity, 0);
     }
-   // Debug.Log(Direction, gameObject);
 }
 
 function CheckForXVelocity(){
-    if(XVelocity <= 0){
+    if(XVelocity == 0){
+    	Debug.Log("TESTING THE XCELOVODIY FALSE THING YAY");
         Player1IsKnockedBack = false;
     }
 }

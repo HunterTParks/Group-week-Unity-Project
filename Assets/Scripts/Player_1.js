@@ -65,22 +65,22 @@ function Update () {
 function CheckForDirection(){
     if(Input.GetAxis("Horizontal") > 0){
         //0 is looking right
-        Debug.Log("ETSTING RIGHT");
+        //Debug.Log("ETSTING RIGHT");
         Direction = 0;
         TravelRight();
     } else if (Input.GetAxis("Horizontal") < 0){
         //1 is looking left
-        Debug.Log("ETSTING Left");
+        //Debug.Log("ETSTING Left");
         Direction = 1;
         TravelLeft();
     } else if (Input.GetAxis("Vertical") > 0){
         //2 is looking up
-        Debug.Log("ETSTING UP");
+        //Debug.Log("ETSTING UP");
         Direction = 2;
        	TravelUp();
     } else if (Input.GetAxis("Vertical") < 0) {
         //3 is looking down
-        Debug.Log("ETSTING Down");
+        //Debug.Log("ETSTING Down");
         Direction = 3;
         TravelDown();
     }
@@ -122,7 +122,7 @@ function TravelDown(){
 
 
 function OnCollisionEnter2D(coll: Collision2D){
-    if(coll.gameObject.name == "Player 3" && Input.GetButton("Fire1")){
+    if(coll.gameObject.name == "Player 3" && Input.GetButton("Player1Push")){
         Player3KnockBack(coll);
         coll.gameObject.GetComponent(Player_2).health-=10;
    }
@@ -146,7 +146,6 @@ function Player3KnockBack(coll: Collision2D){
     	XVelocity = 10;
     	coll.gameObject.GetComponent(Rigidbody2D).velocity = new Vector2(XVelocity, 0);
     }
-   // Debug.Log(Direction, gameObject);
 }
 
 function CheckForXVelocity(){
