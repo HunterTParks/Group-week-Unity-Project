@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Background
+  - Player 1
   layers:
   - Default
   - TransparentFX
@@ -41,6 +42,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Health Bar Player 2
+    uniqueID: 760257815
+    locked: 0
+  - name: Health Bar Player 1
+    uniqueID: 2769461665
     locked: 0
   - name: Background
     uniqueID: 2281815577
