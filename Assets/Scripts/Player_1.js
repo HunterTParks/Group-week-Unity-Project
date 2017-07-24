@@ -9,6 +9,7 @@ var health : float = 100.0;
 var Player3IsKnockedBack : boolean = false;
 var XVelocity : float = 0;
 var Direction : float = 0;
+var HealthBar: float = 0;
 
 function Update () {
     CheckForDirection();
@@ -61,9 +62,6 @@ function NoHealth(){
         Destroy(gameObject);
     }
 }
-
-    // WARNIGN WARNIGN WARNIGN WARNING
-    // FIX HERE RIGHT NOW BELOW THE KNOCKBACK WORK ON IT
 
 function Player3KnockBack(coll: Collision2D){
 	var other = coll.gameObject;
