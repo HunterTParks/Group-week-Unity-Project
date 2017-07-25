@@ -380,6 +380,9 @@ GameObject:
   - component: {fileID: 208864306}
   - component: {fileID: 208864307}
   - component: {fileID: 208864308}
+  - component: {fileID: 208864309}
+  - component: {fileID: 208864310}
+  - component: {fileID: 208864311}
   m_Layer: 9
   m_Name: Player 3
   m_TagString: Untagged
@@ -511,11 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63931d4822be93438b9b71eb95a11ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   health: 100
-  Player1IsKnockedBack: 0
-  XVelocity: 0
-  Direction: 0
   HealthBar: 0
 --- !u!95 &208864307
 Animator:
@@ -569,6 +568,45 @@ PolygonCollider2D:
       - {x: 1.4795421, y: -2.8509789}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
+--- !u!114 &208864309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208864300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aab447568a81aa40ac4755256e9343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!114 &208864310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208864300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8535b9d23b51ed049a9d0cba203a1fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1IsKnockedBack: 0
+  XVelocity: 0
+  Direction: 0
+--- !u!114 &208864311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208864300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63931d4822be93438b9b71eb95a11ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  HealthBar: 0
 --- !u!1 &297557715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,11 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63931d4822be93438b9b71eb95a11ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   health: 100
-  Player1IsKnockedBack: 0
-  XVelocity: 0
-  Direction: 0
   HealthBar: 0
 --- !u!114 &1087016495
 MonoBehaviour:
@@ -2310,7 +2344,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2122364856}
-  - component: {fileID: 2122364851}
   - component: {fileID: 2122364855}
   - component: {fileID: 2122364854}
   - component: {fileID: 2122364853}
@@ -2319,6 +2352,9 @@ GameObject:
   - component: {fileID: 2122364858}
   - component: {fileID: 2122364859}
   - component: {fileID: 2122364860}
+  - component: {fileID: 2122364861}
+  - component: {fileID: 2122364862}
+  - component: {fileID: 2122364851}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player 1
@@ -2337,32 +2373,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf035dc8e4958e48b9e8efee7649241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headRight: {fileID: 21300010, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  headLeft: {fileID: 21300010, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  headBack: {fileID: 21300006, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  headFront: {fileID: 21300004, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  chestRight: {fileID: 21300016, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  chestLeft: {fileID: 21300016, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  chestBack: {fileID: 21300012, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  chestFront: {fileID: 21300000, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  armRight: {fileID: 21300002, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  armLeft: {fileID: 21300002, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  armFrontL: {fileID: 21300002, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  armFrontR: {fileID: 21300002, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  armBackL: {fileID: 21300002, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  armBackR: {fileID: 21300002, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  legRight: {fileID: 21300008, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  legLeft: {fileID: 21300008, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  legFrontL: {fileID: 21300014, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  legFrontR: {fileID: 21300014, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  legBackL: {fileID: 21300014, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  legBackR: {fileID: 21300014, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  currentSprite: {fileID: 21300004, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
-  speed: 5
+  headRight: {fileID: 0}
+  headLeft: {fileID: 0}
+  headBack: {fileID: 0}
+  headFront: {fileID: 0}
+  chestRight: {fileID: 0}
+  chestLeft: {fileID: 0}
+  chestBack: {fileID: 0}
+  chestFront: {fileID: 0}
+  armRight: {fileID: 0}
+  armLeft: {fileID: 0}
+  armFrontL: {fileID: 0}
+  armFrontR: {fileID: 0}
+  armBackL: {fileID: 0}
+  armBackR: {fileID: 0}
+  legRight: {fileID: 0}
+  legLeft: {fileID: 0}
+  legFrontL: {fileID: 0}
+  legFrontR: {fileID: 0}
+  legBackL: {fileID: 0}
+  legBackR: {fileID: 0}
+  currentSprite: {fileID: 0}
+  speed: 1
   health: 100
-  Player3IsKnockedBack: 0
-  XVelocity: 0
-  Direction: 0
   HealthBar: 0
 --- !u!114 &2122364852
 MonoBehaviour:
@@ -2616,3 +2649,29 @@ MonoBehaviour:
   leftLeg: {fileID: 21300008, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
   rightLeg: {fileID: 21300008, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
   head: {fileID: 21300004, guid: 584c6c33764f95c4fb62446fdd6f0fce, type: 3}
+--- !u!114 &2122364861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2122364850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8927189b1c49f347b2a6dfb0da4da1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!114 &2122364862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2122364850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd1f6ecb941d2549bf073fe0901479e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player3IsKnockedBack: 0
+  XVelocity: 0
+  Direction: 0
