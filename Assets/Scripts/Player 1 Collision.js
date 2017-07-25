@@ -25,9 +25,12 @@ function FixedUpdate(){
 }
 
 function OnCollisionEnter2D(coll: Collision2D){
-	if(coll.gameObject.name == "Player 3" && Input.GetButton("Player1Push")){
+	if(coll.gameObject.name == "Player 3" && Input.GetButton("Player1Punch")){
+		gameObject.GetComponent(Player_1_Attacks).Punch(coll);
 		Player3KnockBack(coll);
-		coll.gameObject.GetComponent(Player_2).health -= 10;
+	} else if(coll.gameObject.name == "Player 3" && Input.GetButton("Player1Kick")){
+		gameObject.GetComponent(Player_1_Attacks).Kick(coll);
+		Player3KnockBack(coll);
 	}
 }
 

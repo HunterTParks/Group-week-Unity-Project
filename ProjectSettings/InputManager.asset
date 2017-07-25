@@ -38,7 +38,7 @@ InputManager:
     axis: 1
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Player1Push
+    m_Name: Player1Punch
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -54,7 +54,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire2
+    m_Name: Player1Kick
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -182,7 +182,7 @@ InputManager:
     axis: 1
     joyNum: 2
   - serializedVersion: 3
-    m_Name: player2Push
+    m_Name: player2Punch
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -198,11 +198,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire2
+    m_Name: Player2Kick
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 1
+    positiveButton: c
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
