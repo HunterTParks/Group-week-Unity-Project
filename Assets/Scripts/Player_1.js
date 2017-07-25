@@ -30,70 +30,99 @@ var legBackL: Sprite;
 var legBackR: Sprite;
 
 function Awake () {
-	//testSprite = gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite;
 }
 
-var currentSprite: Sprite;
 var speed : float = 1.0;
 var health : float = 100.0;
 var HealthBar: float = 0;
 
 function Update () {
     //Boundry();
-    //NoHealth();
+    NoHealth();
 }
 
-function FixedUpdate() {
-	//if(Player3IsKnockedBack === true){
-	        //XVelocity--;
-	        //if(XVelocity < 0){
-	        //	XVelocity++;
-	       // } else if (XVelocity > 0){
-	        //	XVelocity--;
-	        //}
-	        //gameObject.Find("Player 3").GetComponent(Rigidbody2D).velocity = new Vector2(XVelocity, 0);
-	    //}
+function NoHealth(){
+    if(health <= 0){
+        Destroy(gameObject);
+    }
 }
 
 function TravelRight(){
-		gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headRight;
-        gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestRight;
-        gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legRight;
-        gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite != legLeft;
-        gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armRight;
-        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite != armLeft;
+			gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headRight;
+			gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = -1.28;
+	    gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestRight;
+	    gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legRight;
+			gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).anchor.x = -1.28;
+	    gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite != legBackR;
+			gameObject.transform.Find("Left-leg").GetComponent(FixedJoint2D).anchor.x = -1.28;
+	    gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armRight;
+			gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).anchor.x = 2.22;
+			gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).connectedAnchor.x = 2.56;
+			gameObject.transform.Find("Right-arm").GetComponent(Transform).position.z = 8;
+			gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite != armLeft;
+			gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).anchor.x = 2.24;
+			gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).connectedAnchor.x = -2.49;
+			gameObject.transform.Find("Left-arm").GetComponent(Transform).position.z = -8;
+
 	}
 
 function TravelLeft(){
-		gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headLeft;
-        gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestLeft;
-        gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legLeft;
-        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armLeft;
-	}
+			gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headLeft;
+      gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestLeft;
+			gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = -0.01;
+			gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).connectedAnchor.x = -0.04000043;
+      gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legLeft;
+			gameObject.transform.Find("Left-leg").GetComponent(FixedJoint2D).anchor.x = 1.56;
+			gameObject.transform.Find("Left-leg").GetComponent(FixedJoint2D).connectedAnchor.x = 1.24;
+			gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legBackR;
+			gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).anchor.x = -1.42;
+			gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).connectedAnchor.x = 1.24;
+			gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armLeft;
+			gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).anchor.x = 2.24;
+			gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).connectedAnchor.x = -2.49;
+			gameObject.transform.Find("Left-arm").GetComponent(Transform).position.z = 3;
+			gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armRight;
+			gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).anchor.x = -2.9;
+			gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).connectedAnchor.x = -2.49;
+			gameObject.transform.Find("Right-arm").GetComponent(Transform).position.z = -8;
+}
 
 function TravelUp(){
-		gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headBack;
-        gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestBack;
-        gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legBackL;
-        gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legBackR;
-        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armBackL;
-        gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armBackR;
-	}
+			gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headBack;
+			gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = -0.01;
+			gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).connectedAnchor.x = -0.04000043;
+      gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestBack;
+      gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legBackL;
+			gameObject.transform.Find("Left-leg").GetComponent(FixedJoint2D).anchor.x = 0.42;
+			gameObject.transform.Find("Left-leg").GetComponent(FixedJoint2D).connectedAnchor.x = -1.04;
+      gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legBackR;
+			gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).anchor.x = 0;
+			gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).connectedAnchor.x = 1.24;
+      gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armBackL;
+			gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).anchor.x = -0.35;
+			gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).connectedAnchor.x = -2.49;
+      gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armBackR;
+			gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).anchor.x = -0.28;
+			gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).connectedAnchor.x = 2.56;
+}
 
 function TravelDown(){
-		gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headFront;
-        gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestFront;
-        gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legFrontL;
-        gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legFrontR;
-        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armFrontL;
-        gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armFrontR;
-	}
-
-function OnCollisionEnter2D(coll: Collision2D){
-    if(coll.gameObject.name == "Player 3" && Input.GetButton("Fire1")){
-        Player3KnockBack(coll);
-        coll.gameObject.GetComponent(Player_2).health-=10;
-   }
+			gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headFront;
+			gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = -0.01;
+			gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).connectedAnchor.x = -0.04000043;
+      gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestFront;
+      gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legFrontL;
+			gameObject.transform.Find("Left-leg").GetComponent(FixedJoint2D).anchor.x = 0.42;
+			gameObject.transform.Find("Left-leg").GetComponent(FixedJoint2D).connectedAnchor.x = -1.04;
+      gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legFrontR;
+			gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).anchor.x = 0;
+			gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).connectedAnchor.x = 1.24;
+      gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armFrontL;
+			gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).anchor.x = -0.35;
+			gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).connectedAnchor.x = -2.49;
+      gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armFrontR;
+			gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).anchor.x = -0.28;
+			gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).connectedAnchor.x = 2.56;
 }
 
 //function Move(){
