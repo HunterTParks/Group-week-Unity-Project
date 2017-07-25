@@ -619,6 +619,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674bfcbbe62de9e46b9d94e54709862a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolDownCounterPunch: 1
+  coolingDownPunch: 0
+  coolDownCounterKick: 3
+  coolingDownKick: 0
 --- !u!1 &297557715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2372,7 @@ GameObject:
   - component: {fileID: 2122364862}
   - component: {fileID: 2122364851}
   - component: {fileID: 2122364863}
+  - component: {fileID: 2122364864}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player 1
@@ -2534,7 +2539,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.82}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2698,3 +2703,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89f899d11639a845a71b207c6790362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolDownCounterPunch: 1
+  coolingDownPunch: 0
+  coolDownCounterKick: 3
+  coolingDownKick: 0
+  coolDownCounterSpecial: 5
+  coolingDownSpecial: 0
+--- !u!111 &2122364864
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2122364850}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d5a0cf44b1f3eda44ae5079b0fae98d2, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 1
+  m_CullingType: 0

@@ -31,6 +31,9 @@ function OnCollisionEnter2D(coll: Collision2D){
 	} else if(coll.gameObject.name == "Player 3" && Input.GetButton("Player1Kick")){
 		gameObject.GetComponent(Player_1_Attacks).Kick(coll);
 		Player3KnockBack(coll);
+	} else if(coll.gameObject.name == "Player 3" && Input.GetButton("Player1SpecialAttack")){
+		gameObject.GetComponent(Player_1_Attacks).Special(coll);
+		Player3KnockBack(coll);
 	}
 }
 
