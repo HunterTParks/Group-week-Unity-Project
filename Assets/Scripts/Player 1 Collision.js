@@ -5,7 +5,7 @@ var XVelocity: float = 0;
 var Direction : float = 0;
 
 function Start () {
-	
+
 }
 
 function Update () {
@@ -65,21 +65,21 @@ function CheckForDirection(){
         //0 is looking right
         //Debug.Log("ETSTING RIGHT");
         Direction = 0;
-        //TravelRight();
+        gameObject.GetComponent(Player_1).TravelRight();
     } else if (Input.GetAxis("Horizontal") < 0){
         //1 is looking left
         //Debug.Log("ETSTING Left");
         Direction = 1;
-        //TravelLeft();
+        gameObject.GetComponent(Player_1).TravelLeft();
     } else if (Input.GetAxis("Vertical") > 0){
         //2 is looking up
         //Debug.Log("ETSTING UP");
         Direction = 2;
-       	//TravelUp();
+       	gameObject.GetComponent(Player_1).TravelUp();
     } else if (Input.GetAxis("Vertical") < 0) {
         //3 is looking down
         //Debug.Log("ETSTING Down");
         Direction = 3;
-        //TravelDown();
+        gameObject.GetComponent(Player_1).TravelDown();
     }
 }
