@@ -1,13 +1,14 @@
 ﻿#pragma strict
 
-//var DeathBar: float = gameObject.GetComponent(Transform).position.x;
 var checkHealth: float = 100;
 
-//var Player: UnityEngine.GameObject = gameObject.Find("Player 1");
-
-var Player = gameObject.Find("Player 3");
+var Player: UnityEngine.GameObject;
 
 var LostHealth: float;
+
+function Awake() {
+	Player = gameObject.Find("Player 3");
+}
 
 function Start () {
 	

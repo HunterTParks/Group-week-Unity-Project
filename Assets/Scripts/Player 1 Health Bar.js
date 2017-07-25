@@ -1,13 +1,15 @@
 ﻿#pragma strict
 
-//var DeathBar: float = gameObject.GetComponent(Transform).position.x;
 var checkHealth: float = 100;
 
-//var Player: UnityEngine.GameObject = gameObject.Find("Player 1");
-
-var Player = gameObject.Find("Player 1");
+var Player: UnityEngine.GameObject;
 
 var LostHealth: float;
+
+function Awake() {
+	Player = gameObject.Find("Player 1");
+
+}
 
 function Start () {
 	
@@ -27,9 +29,6 @@ function Update () {
 function CheckForHealth() {
 
 	if(checkHealth != Player.GetComponent(Player_1).health){
-		//Debug.Log(Player.GetComponent(Player_1).health);
-		//Debug.Log(checkHealth);
-
 		var currentPosition = gameObject.GetComponent(Transform).position;
 
 		LostHealth = (checkHealth - Player.GetComponent(Player_1).health) * 0.034;
