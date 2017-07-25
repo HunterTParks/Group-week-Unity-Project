@@ -86,11 +86,13 @@ function CheckForDirection(){
     }
 }
 
-function TravelRight(){
+function TravelRight(){	
 		gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headRight;
         gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestRight;
         gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legRight;
+        gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite != legLeft;
         gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armRight;
+        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite != armLeft;
 	}
 
 function TravelLeft(){
@@ -98,8 +100,6 @@ function TravelLeft(){
         gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestLeft;
         gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legLeft;
         gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armLeft;
-        gameObject.transform.Find("Left-arm").GetComponent(Transform).position.x = gameObject.GetComponent(Transform).position.x;
-        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).flipX = true;
 	}
 
 function TravelUp(){
@@ -107,8 +107,8 @@ function TravelUp(){
         gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestBack;
         gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legBackL;
         gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legBackR;
-        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armBackR;
-        gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armBackL;
+        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armBackL;
+        gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armBackR;
 	}
 
 function TravelDown(){
@@ -116,10 +116,9 @@ function TravelDown(){
         gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestFront;
         gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legFrontL;
         gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legFrontR;
-        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armFrontR;
-        gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armFrontL;
+        gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite = armFrontL;
+        gameObject.transform.Find("Right-arm").GetComponent(SpriteRenderer).sprite = armFrontR;
 	}
-
 
 function OnCollisionEnter2D(coll: Collision2D){
     if(coll.gameObject.name == "Player 3" && Input.GetButton("Fire1")){
