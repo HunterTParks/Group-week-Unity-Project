@@ -49,7 +49,7 @@ function NoHealth(){
 
 function TravelRight(){
 	gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headRight;
-	gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = -1.28;
+	gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = 1;
 	gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestRight;
 	gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legRight;
 	gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).anchor.x = -1.28;
@@ -71,7 +71,7 @@ function TravelRight(){
 function TravelLeft(){
 	gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headLeft;
 	gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestLeft;
-	gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = 0.92;
+	gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = -1.06;
 	gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).connectedAnchor.x = -0.04000043;
 	gameObject.transform.Find("Left-leg").GetComponent(SpriteRenderer).sprite = legLeft;
 	gameObject.transform.Find("Left-leg").GetComponent(FixedJoint2D).anchor.x = 1.56;
