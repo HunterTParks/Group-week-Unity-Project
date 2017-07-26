@@ -64,14 +64,18 @@ function CheckForDirection(){
     if(Input.GetAxis("Horizontal2") > 0){
         //0 is looking right
         Direction = 0;
+        gameObject.GetComponent(Player_2).TravelRight();
     } else if (Input.GetAxis("Horizontal2") < 0){
         //1 is looking left
         Direction = 1;
+        gameObject.GetComponent(Player_2).TravelLeft();
     } else if (Input.GetAxis("Vertical2") > 0){
         //2 is looking up
         Direction = 2;
+        gameObject.GetComponent(Player_2).TravelUp();
     } else if (Input.GetAxis("Vertical2") < 0) {
         //3 is looking down
         Direction = 3;
+        gameObject.GetComponent(Player_2).TravelDown();
     }
 }
