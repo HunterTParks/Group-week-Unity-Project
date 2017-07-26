@@ -19,7 +19,36 @@ function Update () {
 	if(coolDownCounterKick <= 0) {
 		coolingDownKick = true;
 	}
+
+	if(Input.GetKeyDown ("v")){
+		PunchAnimation();
+	}
+	if(Input.GetKeyDown ("c")){
+		KickAnimation();
+	}
 }
+
+
+function PunchAnimation () {
+	if(gameObject.GetComponent(Player_2_Collision).Direction == 0 || gameObject.GetComponent(Player_2_Collision).Direction == 3){
+		var anim = GetComponent(Animator);
+		anim.Play("BlueManPunchLeft");
+	} else if(gameObject.GetComponent(Player_2_Collision).Direction == 1 || gameObject.GetComponent(Player_2_Collision).Direction == 2){
+		var anime = GetComponent(Animator);
+		anime.Play("BlueManPunch");
+	}
+};
+
+function KickAnimation () {
+	if(gameObject.GetComponent(Player_2_Collision).Direction == 0 || gameObject.GetComponent(Player_2_Collision).Direction == 3){
+		var anim = GetComponent(Animator);
+		anim.Play("BlueManKickLeft");
+	} else if(gameObject.GetComponent(Player_2_Collision).Direction == 1 || gameObject.GetComponent(Player_2_Collision).Direction == 2){
+		var anime = GetComponent(Animator);
+		anime.Play("BlueManKickRight");
+	}
+};
+
 
 function Punch(coll: Collision2D){
 	if(coolingDownPunch == true){
