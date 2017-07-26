@@ -6,6 +6,8 @@ function Start () {
 
 var health : float = 100.0;
 var HealthBar: float = 0;
+var source: AudioSource;
+var DeathSound: AudioClip;
 
 function Update () {
     NoHealth();
@@ -13,8 +15,10 @@ function Update () {
 
 function NoHealth(){
     if(health <= 0){
+    	//source.Play();
         Destroy(gameObject);
     }
+
 }
 
 
