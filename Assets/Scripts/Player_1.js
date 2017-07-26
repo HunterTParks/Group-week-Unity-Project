@@ -43,7 +43,10 @@ function Update () {
 
 function NoHealth(){
     if(health <= 0){
-        Destroy(gameObject);
+    var anim = GetComponent(Animator);
+		anim.Play("PurpleManDeathAnimation");
+        //Destroy(gameObject);
+        //health = 100;
     }
 }
 
