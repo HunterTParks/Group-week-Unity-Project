@@ -60,6 +60,7 @@ function TravelRight(){
 	gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).anchor.x = 2.22;
 	gameObject.transform.Find("Right-arm").GetComponent(FixedJoint2D).connectedAnchor.x = 2.56;
 	gameObject.transform.Find("Right-arm").GetComponent(Transform).position.z = 8;
+	//gameObject.transform.Find("Right-arm").GetComponent(Transform).position.x = gameObject.GetComponent(Transform).position.x;
 	gameObject.transform.Find("Left-arm").GetComponent(SpriteRenderer).sprite != armLeft;
 	gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).anchor.x = 2.24;
 	gameObject.transform.Find("Left-arm").GetComponent(FixedJoint2D).connectedAnchor.x = -2.49;

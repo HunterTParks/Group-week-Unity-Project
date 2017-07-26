@@ -9,6 +9,7 @@ function Start () {
 
 function Update () {
 	Boundry();
+
 }
 
 function Boundry(){

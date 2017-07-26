@@ -29,7 +29,35 @@ function Update () {
 	if(coolDownCounterSpecial <= 0) {
 		coolingDownSpecial = true;
 	}
+
+	if(Input.GetKeyDown ("left ctrl")){
+		PunchAnimation();
+	}
+	if(Input.GetKeyDown ("left alt")){
+		KickAnimation();
+	}
 }
+
+
+function PunchAnimation () {
+	if(gameObject.GetComponent(Player_1_Collision).Direction == 0 || gameObject.GetComponent(Player_1_Collision).Direction == 3){
+		var anim = GetComponent(Animator);
+		anim.Play("PurpleManPunch");
+	} else if(gameObject.GetComponent(Player_1_Collision).Direction == 1 || gameObject.GetComponent(Player_1_Collision).Direction == 2){
+		var anime = GetComponent(Animator);
+		anime.Play("PurpleManOtherArmPunch");
+	}
+};
+
+function KickAnimation () {
+	if(gameObject.GetComponent(Player_1_Collision).Direction == 0 || gameObject.GetComponent(Player_1_Collision).Direction == 3){
+		var anim = GetComponent(Animator);
+		anim.Play("PurpleManKick");
+	} else if(gameObject.GetComponent(Player_1_Collision).Direction == 1 || gameObject.GetComponent(Player_1_Collision).Direction == 2){
+		var anime = GetComponent(Animator);
+		anime.Play("PurlpleManOtherKick");
+	}
+};
 
 
 function Punch(coll: Collision2D) {
@@ -37,9 +65,6 @@ function Punch(coll: Collision2D) {
 		coll.gameObject.GetComponent(Player_2).health -= 5;
 		coolingDownPunch = false;
 		coolDownCounterPunch = 1;
-		//GetComponent.<Animation>().Play("PurpleManPunch");
-		var anim = GetComponent(Animator);
-		anim.Play("PurpleManPunch");
 	}
 }
 
