@@ -11,9 +11,6 @@ function Update () {
     NoHealth();
 }
 
-
-
-
 function NoHealth(){
     if(health <= 0){
         Destroy(gameObject);
