@@ -20,10 +20,10 @@ function Update () {
 		coolingDownKick = true;
 	}
 
-	if(Input.GetKeyDown ("v")){
+	if(Input.GetButtonDown ("Player2Punch")){
 		PunchAnimation();
 	}
-	if(Input.GetKeyDown ("c")){
+	if(Input.GetButtonDown ("Player2Kick")){
 		KickAnimation();
 	}
 
@@ -64,7 +64,7 @@ function KickAnimation () {
 
 function Punch(coll: Collision2D){
 	if(coolingDownPunch == true){
-		coll.gameObject.GetComponent(Player_1).health -= 5;
+		coll.gameObject.GetComponent(Player_1).health -= 15;
 		coolingDownPunch = false;
 		coolDownCounterPunch = 1;
 	}
@@ -72,7 +72,7 @@ function Punch(coll: Collision2D){
 
 function Kick(coll: Collision2D) {
 	if(coolingDownKick == true){
-	coll.gameObject.GetComponent(Player_1).health -= 10;
+	coll.gameObject.GetComponent(Player_1).health -= 25;
 	coolingDownKick = false;
 	coolDownCounterKick = 1;
 	}

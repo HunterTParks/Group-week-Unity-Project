@@ -30,6 +30,7 @@ var legBackL: Sprite;
 var legBackR: Sprite;
 
 var timeLeft:float = 13;
+var gameOver: UnityEngine.GameObject;
 
 function Awake () {
 }
@@ -46,18 +47,19 @@ function Update () {
 
 function NoHealth(){
     if(health <= 0){
+    	gameOver.SetActive(true);
     var anim = GetComponent(Animator);
 		anim.Play("PurpleManDeathAnimation");
         //Destroy(gameObject);
         //health = 100;
-        yield WaitForSeconds(3);
+        yield WaitForSeconds(6);
         Application.LoadLevel(3);
     }
 }
 
 function TravelRight(){
-	gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headRight;
-	gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = 1;
+	//gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headRight;
+	//gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = 1;
 	gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestRight;
 	gameObject.transform.Find("Right-leg").GetComponent(SpriteRenderer).sprite = legRight;
 	gameObject.transform.Find("Right-leg").GetComponent(FixedJoint2D).anchor.x = -1.28;
@@ -77,7 +79,7 @@ function TravelRight(){
 }
 
 function TravelLeft(){
-	gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headLeft;
+	//gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headLeft;
 	gameObject.transform.Find("Chest").GetComponent(SpriteRenderer).sprite = chestLeft;
 	gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).anchor.x = -1.06;
 	gameObject.transform.Find("Head-front").GetComponent(FixedJoint2D).connectedAnchor.x = -0.04000043;

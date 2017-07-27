@@ -80,7 +80,7 @@ function KickAnimation () {
 
 function Punch(coll: Collision2D) {
 	if(coolingDownPunch == true){
-		coll.gameObject.GetComponent(Player_2).health -= 5;
+		coll.gameObject.GetComponent(Player_2).health -= 10;
 		coolingDownPunch = false;
 		coolDownCounterPunch = 1;
 	}
@@ -88,7 +88,7 @@ function Punch(coll: Collision2D) {
 
 function Kick(coll: Collision2D) {
 	if(coolingDownKick == true){
-		coll.gameObject.GetComponent(Player_2).health -= 10;
+		coll.gameObject.GetComponent(Player_2).health -= 20;
 		coolingDownKick = false;
 		coolDownCounterKick = 1;
 	}
