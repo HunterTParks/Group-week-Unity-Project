@@ -13,7 +13,9 @@ function Update () {
 
 function NoHealth(){
     if(health <= 0){
-        Destroy(gameObject);
+         var anim = GetComponent(Animator);
+		anim.Play("BlueDudeDeath");
+		//Destroy(gameObject);
     }
 }
 

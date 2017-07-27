@@ -29,6 +29,8 @@ var legFrontR: Sprite;
 var legBackL: Sprite;
 var legBackR: Sprite;
 
+var timeLeft:float = 13;
+
 function Awake () {
 }
 
@@ -39,16 +41,21 @@ var HealthBar: float = 0;
 function Update () {
     //Boundry();
     NoHealth();
+	 //timeLeft -= Time.deltaTime;
 }
 
 function NoHealth(){
     if(health <= 0){
     var anim = GetComponent(Animator);
 		anim.Play("PurpleManDeathAnimation");
-        //Destroy(gameObject);
-        //health = 100;
-    }
-}
+
+	// Debug.Log(timeLeft);
+    // if ( timeLeft <= 0 )
+    // {
+     //   Destroy(gameObject);
+	 //}
+ 	}
+ }
 
 function TravelRight(){
 	gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headRight;
