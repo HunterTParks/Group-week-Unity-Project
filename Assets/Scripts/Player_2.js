@@ -17,7 +17,7 @@ function Update () {
 function NoHealth(){
     if(health <= 0){
     gameOver.SetActive(true);
-         var anim = GetComponent(Animator);
+        var anim = GetComponent(Animator);
 		anim.Play("BlueDudeDeath");
 		yield WaitForSeconds(6);
         Application.LoadLevel(3);

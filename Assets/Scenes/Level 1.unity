@@ -776,7 +776,7 @@ MonoBehaviour:
   HealthBar: 0
   source: {fileID: 0}
   DeathSound: {fileID: 0}
-  gameOver: {fileID: 0}
+  gameOver: {fileID: 1653213632}
 --- !u!95 &208864307
 Animator:
   serializedVersion: 3
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aab447568a81aa40ac4755256e9343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2.5
 --- !u!114 &208864310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2472,7 +2472,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1319527183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 1.6, z: 1}
+  m_LocalPosition: {x: -0.07, y: 1.6, z: -0.88}
   m_LocalScale: {x: -1.29, y: 1.1039954, z: 0.89211714}
   m_Children: []
   m_Father: {fileID: 2122364856}
@@ -3556,7 +3556,7 @@ MonoBehaviour:
   legBackR: {fileID: 21300016, guid: 43d4364cb7972164da7d6fe9dbc3967a, type: 3}
   timeLeft: 13
   gameOver: {fileID: 1653213632}
-  speed: 1
+  speed: 5
   health: 100
   HealthBar: 0
 --- !u!114 &2122364852
@@ -3823,7 +3823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8927189b1c49f347b2a6dfb0da4da1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!114 &2122364862
 MonoBehaviour:
   m_ObjectHideFlags: 0
