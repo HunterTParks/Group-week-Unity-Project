@@ -30,6 +30,7 @@ var legBackL: Sprite;
 var legBackR: Sprite;
 
 var timeLeft:float = 13;
+var gameOver: UnityEngine.GameObject;
 
 function Awake () {
 }
@@ -46,11 +47,12 @@ function Update () {
 
 function NoHealth(){
     if(health <= 0){
+    	gameOver.SetActive(true);
     var anim = GetComponent(Animator);
 		anim.Play("PurpleManDeathAnimation");
         //Destroy(gameObject);
         //health = 100;
-        yield WaitForSeconds(3);
+        yield WaitForSeconds(6);
         Application.LoadLevel(3);
     }
 }
