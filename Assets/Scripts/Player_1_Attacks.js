@@ -9,6 +9,7 @@ var coolingDownKick: boolean = false;
 var coolDownCounterSpecial: float = 5;
 var coolingDownSpecial: boolean = false;
 
+var pause: UnityEngine.GameObject;
 
 
 function Start () {
@@ -36,19 +37,25 @@ function Update () {
 	if(Input.GetButtonDown ("Player1Kick")){
 		KickAnimation();
 	}
-	Pause();
+
+	//Pause();
+	//Continue();
 }
 
 function Pause(){
 	if(Input.GetButtonDown("Start")){
-		if(Time.timeScale == 0){
-			Time.timeScale = 1;
-		} else {
-			Time.timeScale = 0;
-		}
+		
+		pause.SetActive(true);
+		Time.timeScale = 0;
 	}
 }
 
+function Continue(){
+	if(Input.GetButtonDown("Start")){
+		pause.SetActive(false);
+		Time.timeScale = 1;
+	}
+}
 
 function PunchAnimation () {
 	if(gameObject.GetComponent(Player_1_Collision).Direction == 0 || gameObject.GetComponent(Player_1_Collision).Direction == 3){

@@ -48,14 +48,12 @@ function NoHealth(){
     if(health <= 0){
     var anim = GetComponent(Animator);
 		anim.Play("PurpleManDeathAnimation");
-
-	// Debug.Log(timeLeft);
-    // if ( timeLeft <= 0 )
-    // {
-     //   Destroy(gameObject);
-	 //}
- 	}
- }
+        //Destroy(gameObject);
+        //health = 100;
+        yield WaitForSeconds(3);
+        Application.LoadLevel(3);
+    }
+}
 
 function TravelRight(){
 	gameObject.transform.Find("Head-front").GetComponent(SpriteRenderer).sprite = headRight;
