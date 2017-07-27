@@ -2515,7 +2515,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1404267632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 208864301}
@@ -3136,6 +3136,7 @@ MonoBehaviour:
   legFrontR: {fileID: 21300016, guid: 43d4364cb7972164da7d6fe9dbc3967a, type: 3}
   legBackL: {fileID: 21300022, guid: 43d4364cb7972164da7d6fe9dbc3967a, type: 3}
   legBackR: {fileID: 21300016, guid: 43d4364cb7972164da7d6fe9dbc3967a, type: 3}
+  timeLeft: 13
   speed: 1
   health: 100
   HealthBar: 0
