@@ -30,11 +30,22 @@ function Update () {
 		coolingDownSpecial = true;
 	}
 
-	if(Input.GetKeyDown ("left ctrl")){
+	if(Input.GetButtonDown ("Player1Punch")){
 		PunchAnimation();
 	}
-	if(Input.GetKeyDown ("left alt")){
+	if(Input.GetButtonDown ("Player1Kick")){
 		KickAnimation();
+	}
+	Pause();
+}
+
+function Pause(){
+	if(Input.GetButtonDown("Start")){
+		if(Time.timeScale == 0){
+			Time.timeScale = 1;
+		} else {
+			Time.timeScale = 0;
+		}
 	}
 }
 

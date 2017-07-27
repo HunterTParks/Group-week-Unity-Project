@@ -26,6 +26,18 @@ function Update () {
 	if(Input.GetKeyDown ("c")){
 		KickAnimation();
 	}
+
+	Pause();
+}
+
+function Pause(){
+	if(Input.GetButtonDown("Start")){
+		if(Time.timeScale == 0){
+			Time.timeScale = 1;
+		} else {
+			Time.timeScale = 0;
+		}
+	}
 }
 
 
