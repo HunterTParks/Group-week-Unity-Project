@@ -8,6 +8,7 @@ function Start () {
 
 function Update () {
 	Boundry();
+	Move();
 
 }
 
