@@ -47,6 +47,8 @@ function NoHealth(){
 		anim.Play("PurpleManDeathAnimation");
         //Destroy(gameObject);
         //health = 100;
+        yield WaitForSeconds(3);
+        Application.LoadLevel(3);
     }
 }
 
